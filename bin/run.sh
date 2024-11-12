@@ -34,7 +34,7 @@ test_output=$(uiua test "${solution_dir}/tests.ua")
 if [ $? -eq 0 ]; then
     jq -n '{version: 1, status: "pass"}' > ${results_file}
 else
-    if printf "${test_output}" | grep -q -E "tests? (failed|passed)"; then
+    if printf '%s\n' "${test_output}" | grep -q -E "tests? (failed|passed)"; then
         status="fail"
     else
         status="error"
