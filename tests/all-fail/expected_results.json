@@ -1,5 +1,5 @@
 {
   "version": 1,
   "status": "fail",
-  "message": "TODO: replace with correct output"
+  "message": "Error: 2\n  at /opt/test-runner/tests/all-fail/tests.ua:3:1\n3 | ⍤⤙≍ 4 Square 2\n    ─\nError: 4\n  at /opt/test-runner/tests/all-fail/tests.ua:4:1\n4 | ⍤⤙≍ 16 Square 4\n    ─\nError: 5\n  at /opt/test-runner/tests/all-fail/tests.ua:5:1\n5 | ⍤⤙≍ 25 Square 5\n    ─\nAll 3 tests failed"
 }

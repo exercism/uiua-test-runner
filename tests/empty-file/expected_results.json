@@ -1,5 +1,5 @@
 {
   "version": 1,
-  "status": "fail",
-  "message": "TODO: replace with correct output"
+  "status": "error",
+  "message": "Error: `Square` not found in module tests/empty-file/empty-file.ua\n  at /opt/test-runner/tests/empty-file/tests.ua:1:21\n1 | ~ \"empty-file.ua\" ~ Square\n                        ──────\nError: Unknown identifier `Square`\n  at /opt/test-runner/tests/empty-file/tests.ua:3:7\n3 | ⍤⤙≍ 4 Square 2\n          ──────"
 }
