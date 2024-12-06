@@ -1,14 +1,17 @@
-FROM rust:1.82.0-alpine3.20 AS builder
+FROM alpine:3.20 AS builder
 
-RUN apk add --no-cache linux-headers make musl-dev
+RUN apk add --no-cache curl
 
-RUN cargo install uiua@0.14.0-dev.6
+ARG VERSION=0.14.0-dev.6
+RUN curl -L -o uiua.zip https://github.com/uiua-lang/uiua/releases/download/${VERSION}/uiua-bin-x86_64-unknown-linux-gnu-no-audio.zip && \
+    unzip uiua.zip && \
+    mv uiua /usr/local/bin 
 
 FROM alpine:3.20
 
-RUN apk add --no-cache jq
+RUN apk add --no-cache gcompat jq libgcc
 
-COPY --from=builder /usr/local/cargo/bin/uiua /usr/local/bin
+COPY --from=builder /usr/local/bin/uiua /usr/local/bin
 
 WORKDIR /opt/test-runner
 COPY . .
