@@ -2,7 +2,7 @@ FROM rust:1.87.0-alpine3.20 AS builder
 
 RUN apk add --no-cache linux-headers make musl-dev
 
-RUN cargo install uiua@0.16.0
+RUN cargo install uiua@0.16.2
 
 FROM alpine:3.20
 
