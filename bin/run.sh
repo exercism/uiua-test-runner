@@ -29,7 +29,7 @@ mkdir -p "${output_dir}"
 
 echo "${slug}: testing..."
 
-test_output=$(uiua test "${solution_dir}/tests.ua")
+test_output=$(uiua test "${solution_dir}/tests.ua" 2>&1)
 
 if [ $? -eq 0 ]; then
     jq -n '{version: 1, status: "pass"}' > ${results_file}
