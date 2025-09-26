@@ -2,8 +2,7 @@ FROM rust:1.87.0-alpine3.20 AS builder
 
 RUN apk add --no-cache linux-headers make musl-dev
 
-# TODO: install stable version > 0.17.0-dev.1 once available
-RUN cargo install --git https://github.com/uiua-lang/uiua --rev aa6310c uiua
+RUN cargo install uiua@0.17.0
 
 FROM alpine:3.20
 
