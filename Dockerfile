@@ -1,10 +1,10 @@
-FROM rust:1.87.0-alpine3.20 AS builder
+FROM rust:1.91.1-alpine3.23 AS builder
 
 RUN apk add --no-cache linux-headers make musl-dev
 
 RUN cargo install uiua@0.17.2
 
-FROM alpine:3.20
+FROM alpine:3.23
 
 RUN apk add --no-cache jq
 
