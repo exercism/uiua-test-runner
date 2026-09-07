@@ -3,7 +3,7 @@ FROM rust:1.95.0-alpine3.23@sha256:606fd313a0f49743ee2a7bd49a0914bab7deedb12791f
 
 RUN apk add --no-cache linux-headers make musl-dev
 
-RUN cargo install uiua@0.18.1
+RUN cargo install uiua@0.19.0
 
 FROM alpine:3.23.5@sha256:fd791d74b68913cbb027c6546007b3f0d3bc45125f797758156952bc2d6daf40
 
